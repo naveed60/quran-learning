@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BookOpen, Users, Clock, Star, Play, CheckCircle, Globe, Video, Award, Heart, Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Menu } from 'lucide-react'
+import { BookOpen, Menu } from 'lucide-react'
 
 export default function Navigation() {
   return (
@@ -11,7 +11,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <BookOpen className="h-8 w-8 text-emerald-600" />
-            <span className="text-xl font-bold text-gray-900">QuranAcademy</span>
+            <span className="text-xl font-bold text-gray-900">Noor ul Hassan Quran Academy</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">

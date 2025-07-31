@@ -1,7 +1,7 @@
  "use client"
 
- import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
- import { BookOpen, Users, Clock, Star, Play, CheckCircle, Globe, Video, Award, Heart, Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin, Menu } from 'lucide-react'
+ import { Card, CardContent} from "@/components/ui/card"
+ import { Star } from 'lucide-react'
 
 import { use } from "react"
 export default function Testimonials() {

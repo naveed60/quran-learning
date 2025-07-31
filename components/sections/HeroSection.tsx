@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Play, Video } from 'lucide-react'
+import Image from "next/image"
 
 export default function HeroSection() {
   return (
@@ -50,13 +51,16 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="h-96 lg:h-[500px] bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center shadow-lg">
-            <div className="text-center space-y-4">
-              <div className="text-6xl animate-pulse">📖</div>
-              <div className="text-4xl font-bold text-emerald-600">القرآن الكريم</div>
-              <div className="text-lg text-gray-600">Interactive Learning Platform</div>
-            </div>
-          </div>
+         <div className="relative">
+  <Image
+    src="/images/kid.png"
+    alt="Quran learning online"
+    width={600}
+    height={400}
+    className="bg-emerald-200 rounded-2xl shadow-lg"
+    priority
+  />
+</div>
         </div>
       </div>
     </section>
