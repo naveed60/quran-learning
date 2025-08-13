@@ -80,11 +80,11 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-emerald-400 flex-shrink-0" />
-                <span className="text-sm">info@quranacademy.com</span>
+                <span className="text-sm">imnaveed60@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-emerald-400 flex-shrink-0" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+923244026426</span>
               </li>
               <li className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-emerald-400 flex-shrink-0" />
