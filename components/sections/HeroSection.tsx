@@ -12,7 +12,7 @@ export default function HeroCarousel() {
     {
       id: 1,
       image: "images/slider1.png",
-      badge: "🌟 Trusted by 10,000+ Students Worldwide",
+      badge: "🌟 Trusted by 100+ Students Worldwide",
       title: "Learn Quran Online with",
       titleHighlight: "Expert Teachers",
       description:
@@ -32,7 +32,6 @@ export default function HeroCarousel() {
       description:
         "Learn proper Quranic pronunciation and recitation rules with our experienced teachers using modern interactive tools.",
       stats: [
-        { number: "500+", label: "Lessons" },
         { number: "24/7", label: "Support" },
         { number: "98%", label: "Success Rate" },
       ],
@@ -60,7 +59,7 @@ export default function HeroCarousel() {
       description:
         "Structured Hifz program with experienced Huffaz teachers to guide you through your memorization journey.",
       stats: [
-        { number: "100+", label: "Huffaz" },
+        { number: "20+", label: "Huffaz" },
         { number: "Custom", label: "Schedule" },
         { number: "Proven", label: "Methods" },
       ],
@@ -128,20 +127,7 @@ export default function HeroCarousel() {
 
                     <p className="text-xl text-gray-200 leading-relaxed">{slide.description}</p>
 
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3">
-                        <Play className="mr-2 h-5 w-5" />
-                        Start Free Trial
-                      </Button>
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
-                      >
-                        <Video className="mr-2 h-5 w-5" />
-                        Watch Demo
-                      </Button>
-                    </div>
+                   
 
                     <div className="flex items-center space-x-8 pt-4">
                       {slide.stats.map((stat, statIndex) => (
