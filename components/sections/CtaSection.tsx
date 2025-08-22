@@ -12,9 +12,7 @@ export default function CtaSection() {
           Join thousands of students who have transformed their lives through Quran education
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-emerald-600 hover:bg-gray-100 text-lg px-8 py-3">
-            Start Free 7-Day Trial
-          </Button>
+         
           <Button
             size="lg"
             variant="outline"
