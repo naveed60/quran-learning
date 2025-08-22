@@ -33,11 +33,8 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button variant="outline" className="hidden sm:inline-flex border-emerald-200 text-emerald-700 hover:bg-emerald-50">
+            <Button variant="outline" className="bg-emerald-600 hover:bg-emerald-700 text-white">
               Sign In
-            </Button>
-            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              Start Free Trial
             </Button>
             <Button variant="ghost" className="md:hidden" size="sm">
               <Menu className="h-5 w-5" />
