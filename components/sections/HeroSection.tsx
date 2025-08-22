@@ -12,7 +12,7 @@ export default function HeroCarousel() {
     {
       id: 1,
       image: "images/slider1.png",
-      badge: "🌟 Trusted by 10,000+ Students Worldwide",
+      badge: "🌟 Trusted by 100+ Students Worldwide",
       title: "Learn Quran Online with",
       titleHighlight: "Expert Teachers",
       description:
@@ -32,7 +32,6 @@ export default function HeroCarousel() {
       description:
         "Learn proper Quranic pronunciation and recitation rules with our experienced teachers using modern interactive tools.",
       stats: [
-        { number: "500+", label: "Lessons" },
         { number: "24/7", label: "Support" },
         { number: "98%", label: "Success Rate" },
       ],
@@ -60,7 +59,7 @@ export default function HeroCarousel() {
       description:
         "Structured Hifz program with experienced Huffaz teachers to guide you through your memorization journey.",
       stats: [
-        { number: "100+", label: "Huffaz" },
+        { number: "20+", label: "Huffaz" },
         { number: "Custom", label: "Schedule" },
         { number: "Proven", label: "Methods" },
       ],
