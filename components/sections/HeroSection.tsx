@@ -130,16 +130,9 @@ export default function HeroCarousel() {
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-lg px-8 py-3">
                         <Play className="mr-2 h-5 w-5" />
-                        Start Free Trial
+                        Start Learning
                       </Button>
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
-                      >
-                        <Video className="mr-2 h-5 w-5" />
-                        Watch Demo
-                      </Button>
+                      
                     </div>
 
                     <div className="flex items-center space-x-8 pt-4">
