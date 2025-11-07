@@ -2,32 +2,94 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { BookOpen, Menu } from 'lucide-react'
+import { useEffect } from "react"
 
 export default function Navigation() {
+  const pathname = usePathname()
+
+  // Handle smooth scroll for hash links after navigation
+  useEffect(() => {
+    const handleHashScroll = () => {
+      if (pathname === "/" && window.location.hash) {
+        const hash = window.location.hash.substring(1)
+        const element = document.getElementById(hash)
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" })
+          }, 300)
+        }
+      }
+    }
+
+    // Handle initial load with hash
+    handleHashScroll()
+
+    // Handle hash change
+    window.addEventListener("hashchange", handleHashScroll)
+    
+    return () => {
+      window.removeEventListener("hashchange", handleHashScroll)
+    }
+  }, [pathname])
+
+  const handleSectionClick = (e: React.MouseEvent<HTMLAnchorElement>, section: string) => {
+    if (pathname === "/") {
+      // If already on home page, just scroll
+      e.preventDefault()
+      const element = document.getElementById(section)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
+        // Update URL without reload
+        window.history.pushState(null, "", `/#${section}`)
+      }
+    }
+    // If on another page, let Next.js navigate to /#section
+    // The useEffect will handle scrolling after navigation
+  }
+
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-emerald-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <BookOpen className="h-8 w-8 text-emerald-600" />
-            <span className="text-xl font-bold text-gray-900">Noor ul Hassan Quran Academy</span>
+            <Link href="/" className="flex items-center space-x-2">
+              <BookOpen className="h-8 w-8 text-emerald-600" />
+              <span className="text-xl font-bold text-gray-900">Noor ul Hassan Quran Academy</span>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#courses" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <Link 
+              href="/#courses" 
+              onClick={(e) => handleSectionClick(e, "courses")}
+              className="text-gray-700 hover:text-emerald-600 transition-colors font-medium"
+            >
               Courses
             </Link>
-            <Link href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <Link 
+              href="/#about" 
+              onClick={(e) => handleSectionClick(e, "about")}
+              className="text-gray-700 hover:text-emerald-600 transition-colors font-medium"
+            >
               About
             </Link>
             <Link href="/teachers" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               Teachers
             </Link>
-            <Link href="#testimonials" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <Link 
+              href="/#testimonials" 
+              onClick={(e) => handleSectionClick(e, "testimonials")}
+              className="text-gray-700 hover:text-emerald-600 transition-colors font-medium"
+            >
               Reviews
             </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <Link 
+              href="/#contact" 
+              onClick={(e) => handleSectionClick(e, "contact")}
+              className="text-gray-700 hover:text-emerald-600 transition-colors font-medium"
+            >
               Contact
             </Link>
           </div>
