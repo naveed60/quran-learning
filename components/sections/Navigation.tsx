@@ -21,7 +21,7 @@ export default function Navigation() {
             <Link href="#about" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               About
             </Link>
-            <Link href="#teachers" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
+            <Link href="/teachers" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
               Teachers
             </Link>
             <Link href="#testimonials" className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">
