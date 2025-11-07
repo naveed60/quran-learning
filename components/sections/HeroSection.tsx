@@ -88,7 +88,7 @@ export default function HeroCarousel() {
   }
 
   return (
-    <section className="relative pt-16 pb-8 overflow-hidden w-full">
+    <section id="about" className="relative pt-16 pb-8 overflow-hidden w-full">
       {/* Carousel Container - Full width and height */}
       <div className="relative h-[600px] lg:h-[700px] w-full">
         {slides.map((slide, index) => (
