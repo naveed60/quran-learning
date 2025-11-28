@@ -3,11 +3,13 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BookOpen, Menu } from 'lucide-react'
+import { BookOpen, Menu } from "lucide-react"
 import { useEffect } from "react"
+import { useAuth } from "@/hooks/useAuth"
 
 export default function Navigation() {
   const pathname = usePathname()
+  const { user, logout, isAuthenticated } = useAuth()
 
   // Handle smooth scroll for hash links after navigation
   useEffect(() => {
@@ -94,11 +96,35 @@ export default function Navigation() {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <Button variant="outline" className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              Sign In
-            </Button>
-            <Button variant="ghost" className="md:hidden" size="sm">
+          <div className="flex items-center space-x-3">
+            {isAuthenticated ? (
+              <>
+                <span className="hidden sm:inline-flex text-sm text-gray-600">
+                  Hi, <span className="font-semibold text-gray-900 ml-1">{user?.name.split(" ")[0]}</span>
+                </span>
+                <Button
+                  variant="outline"
+                  className="text-emerald-700 border-emerald-200 hover:bg-emerald-50"
+                  onClick={logout}
+                >
+                  Log Out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  asChild
+                  variant="ghost"
+                  className="hidden sm:inline-flex text-emerald-600 hover:text-emerald-700"
+                >
+                  <Link href="/login">Sign In</Link>
+                </Button>
+                <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                  <Link href="/register">Join Now</Link>
+                </Button>
+              </>
+            )}
+            <Button variant="ghost" className="md:hidden" size="sm" aria-label="Open menu">
               <Menu className="h-5 w-5" />
             </Button>
           </div>
