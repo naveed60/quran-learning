@@ -103,6 +103,13 @@ export default function Navigation() {
                   Hi, <span className="font-semibold text-gray-900 ml-1">{user?.name.split(" ")[0]}</span>
                 </span>
                 <Button
+                  asChild
+                  variant="outline"
+                  className="text-emerald-700 border-emerald-200 hover:bg-emerald-50"
+                >
+                  <Link href="/profile">Profile</Link>
+                </Button>
+                <Button
                   variant="outline"
                   className="text-emerald-700 border-emerald-200 hover:bg-emerald-50"
                   onClick={logout}
