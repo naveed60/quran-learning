@@ -10,9 +10,11 @@ import {
 
 export function useAuth() {
   const [user, setUser] = useState<PublicUser | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setUser(getCurrentUser())
+    setIsLoading(false)
 
     const handleStorage = (event: StorageEvent) => {
       if (event.key === CURRENT_USER_STORAGE_KEY || event.key === null) {
@@ -33,5 +35,6 @@ export function useAuth() {
     user,
     logout,
     isAuthenticated: Boolean(user),
+    isLoading,
   }
 }

@@ -83,7 +83,7 @@ export function RegisterForm() {
         )
       }
 
-      setSuccess("Registration successful! Redirecting...")
+      setSuccess("Registration successful! Reloading...")
       setFormData({
         name: "",
         email: "",
@@ -92,7 +92,9 @@ export function RegisterForm() {
         password: "",
         confirmPassword: "",
       })
-      setTimeout(() => router.push("/"), 1200)
+      setTimeout(() => {
+        window.location.assign("/")
+      }, 1200)
     } catch (err) {
       const message = err instanceof Error ? err.message : "Unable to register at this time."
       setError(message)
